@@ -38,7 +38,7 @@ $(document).ready(function () {
   //     .find("b")
   //     .html("NON ANCORA ATTIVA");
   // }
-  if (dataFine > oggi) {
+  if (dataFine < oggi) {
     $("#notReadyOffert")
       .addClass("showIt")
       .show()
