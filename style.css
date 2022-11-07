@@ -156,6 +156,11 @@ a.blue_hover:hover {
   background: #bababa;
   pointer-events: none;
 }
+#gruppi_whatsapp.disabled {
+  background: gainsboro !important;
+  color: grey !important;
+  pointer-events: none !important;
+}
 #containerCondition:not(.conditionAccepted) {
   animation: heartbeat 1.5s ease-in-out infinite both;
 }

@@ -30,26 +30,27 @@ $(document).ready(function () {
   let dataInizio = new Date("11/10/2022"),
     dataFine = new Date("11/13/2022 16:00"),
     oggi = new Date(),
-    dataOfferta = dataInizio.getTime(),
-    offertaAttiva = false;
+    dataOfferta = dataInizio.getTime();
   // if (dataInizio > oggi) {
   //   $("#notReadyOffert")
   //     .addClass("showIt")
   //     .show()
   //     .find("b")
-  //     .html("OFFERTA NON ANCORA ATTIVA");
+  //     .html("NON ANCORA ATTIVA");
   // }
-  if (dataFine < oggi) {
+  if (dataFine > oggi) {
     $("#notReadyOffert")
       .addClass("showIt")
       .show()
       .find("b")
-      .html("OFFERTA NON PIÚ ATTIVA");
+      .html("CHALLENGE NON PIÚ ATTIVA");
+    $("#bannerTimeout").hide();
   }
   if (dataInizio < oggi) {
-    offertaAttiva = true;
     dataOfferta = dataFine.getTime();
-    $("#titleTimer").html("L'offerta scade fra:");
+    $("#titleTimer").html("La Challenge inizia fra:");
+  } else {
+    $("#gruppi_whatsapp").addClass("disabled");
   }
   let x1 = setInterval(function () {
     const now = new Date().getTime(),
